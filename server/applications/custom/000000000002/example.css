@@ -1,0 +1,28 @@
+
+button {
+    color: blue;
+ }
+
+ .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    z-index: inherit;
+ }
+
+ .testdiv {
+   height: 50%;
+   width: 50%;
+   display: block;
+   background-color: magenta;
+ }
+
+ .testdiv2 {
+   height: 50%;
+   width: 50%;
+   display: block;
+   background-color: yellow;
+ }

@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "llama maybe",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 600,
+        "defaultHeight": 800,
+        "minWidth": 600,
+        "minHeight": 200,
+        "resizable": true,
+        "title": "maybe llama soon",
+        "html": "index.html",
+        "js": "index.js",
+        "css": "assistant.css",
+        "draggable": true
+    }],
+    "icon": "icon.png",
+    "about": "An example application"
+}

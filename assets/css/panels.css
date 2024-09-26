@@ -1,0 +1,69 @@
+
+desktop-panel {
+    --offsetX: 0;
+    --offsetY: 0;
+    --translateX: translateX(0%);
+    --translateY: translateY(0%);
+    transform: var(--translateX) var(--translateY);
+    display: block;
+    height: 100px;
+    background-color: red;
+    position: fixed;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+desktop-panel[attach="north"][position="center"],
+desktop-panel[attach="south"][position="center"] {
+    --translateX: translateX(-50%);
+    left: calc(50% + calc(var(--offsetX) * 1px));
+}
+
+desktop-panel[attach="east"][position="center"],
+desktop-panel[attach="west"][position="center"] {
+    --translateY: translateY(-50%);
+    top: calc(50% + calc(var(--offsetY) * 1px));
+}
+
+desktop-panel[attach="south"] {
+    --translateY: -100%;
+    bottom: calc(var(--offsetY) * 1px);
+}
+
+desktop-panel[attach="north"] {
+    top: calc(var(--offsetY) * 1px);
+}
+
+desktop-panel[attach="east"] {
+    right: calc(var(--offsetX) * 1px);
+    --translateX: translateX(-100%);
+}
+
+desktop-panel[attach="west"] {
+    left: calc(var(--offsetX) * 1px);
+}
+
+desktop-panel[attach="south"][floating="false"],
+desktop-panel[attach="north"][floating="false"] {
+    --offsetY: 0 !important;
+}
+desktop-panel[attach="east"][floating="false"],
+desktop-panel[attach="east"][floating="false"] {
+    --offsetX: 0 !important;
+}
+
+desktop-panel[attach="south"][fullwidth="true"] {
+    width: 100%;
+}
+
+
+.test {
+    top: 50%;
+    left: 50%;
+    width: 199px;
+    height: 399px;
+    position: fixed;
+    display: block;
+    background: re;
+}
+*[testproperty] {background: blue;}

@@ -1,0 +1,25 @@
+{
+    "id":"000000000000",
+    "username":"username",
+    "nickname":"A funny nickname",
+    "email":"johndoe@example.com",
+    "banner":null,
+    "avatar":null,
+    "status":"offline",
+    "about":"Yep this is me",
+    "desktop_symbols": [
+        {
+            "appid": "000000000000",
+            "text": "example",
+            "icon": null,
+            "position": [5, 4]
+        }
+    ],
+    "widgets": [
+        {
+            "id": "System.notes",
+            "position":[30, 30],
+            "small": false
+        }
+    ]
+}

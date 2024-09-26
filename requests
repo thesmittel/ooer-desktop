@@ -1,0 +1,29 @@
+Client: {
+    profile: {
+        get: {
+            username => string,
+            nickname => string,
+            email => string,
+            website => url,
+            avatar => url,
+            banner => url,
+            status => (online|offline|invisible|no_disturb),
+            about => string
+        },
+        set: {
+            username <= string,
+            nickname <= string,
+            email <= string,
+            website <= url,
+            avatar <= url,
+            banner <= url,
+            status <= (online|offline|invisible|no_disturb),
+            about <= string
+        }
+    },
+    settings: {
+        get => all | categoryName | categoryName.settingName
+    }
+}
+    
+

@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Notepad",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 600,
+        "defaultHeight": 800,
+        "minWidth": 600,
+        "minHeight": 200,
+        "resizable": true,
+        "title": "Notepad",
+        "html": "index.html",
+        "js": "index.js",
+        "css": "notepad.css",
+        "draggable": true
+    }],
+    "icon": "settings.png",
+    "about": "A simple text editor"
+}

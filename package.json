@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "description": "First beta test",
+  "main": "app.js",
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "author": "Smittel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.8.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nwjs-types": "^1.0.0"
+  },
+  "window": {
+    "toolbar": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Terminal",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 800,
+        "defaultHeight": 600,
+        "minWidth": 200,
+        "minHeight": 60,
+        "resizable": true,
+        "title": "Terminal",
+        "html": "terminal.html",
+        "js": "terminal.js",
+        "css": "terminal.css",
+        "draggable": true
+    }],
+    "icon": "settings.png",
+    "about": "Access to console commands"
+}

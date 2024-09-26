@@ -1,0 +1,45 @@
+.noscript-background {
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    background-color: #0004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.noscript-background > div {
+    height: 100px;
+    width: 500px;
+    padding: 10px;
+    border-radius: 12px;
+    border: solid red 4px;
+    background-color: #c114;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 1fr;
+}
+
+.noscript-icon {
+    background-image: url("/media/icons?i=icons8-javascript-100.png");
+    background-size: contain;
+    display: block;
+}
+
+.noscript-warning {
+    color: white;
+    font-size: large;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.no-script {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: block;
+    inset: 0;
+    z-index: 1000;
+}

@@ -1,0 +1,95 @@
+:root {
+    /* Windows */
+    --window-background: #0009;
+    --window-backdrop-filter: blur(15px);
+    --window-border-radius: 12px;
+    --window-padding-inline: 4px;
+    --window-padding-top: 0px;
+    --window-padding-bottom: 4px;
+    --window-shadow: 2px 2px 15px -3px rgba(0, 0, 0, 0.66);
+    --window-border-width: 1px;
+    --window-border-style: solid;
+    --window-border-color: #fff3;
+    --window-maximised-border-radius: 0px;
+    --window-maximised-offset: 0px;
+
+
+    --window-tiled-border-radius: 0px;
+    --window-tiled-inline: 4px;
+    --window-tiled-top: 0px;
+    --window-tiled-bottom: 4px;
+
+    /* --window-header-background: linear-gradient(135deg, rgba(105, 224, 222, 1) 0%, rgba(56, 182, 255, 1) 40%, rgba(39, 70, 255, 1) 60%, rgba(0, 47, 150, 1) 100%); */
+    --window-header-background: transparent;
+    --window-header-height: 24px;
+    --window-header-padding-block: 4px;
+    --window-header-padding-left: 4px;
+    --window-header-padding-right: 4px;
+    --window-header-top-radius: 4px;
+    --window-header-bottom-radius: 0px;
+    --window-header-icon-size: 24px;
+    --window-header-icon-width: 36px;
+    --window-header-title-width: 1fr;
+    --window-header-title-alignment: left;
+    --window-header-title-weight: 500;
+    --window-header-title-font: "Roboto", "sans-serif";
+    --window-header-title-size: 16px;
+    --window-header-minimise-width: 32px;
+    --window-header-maximise-width: 32px;
+    --window-header-close-width: 32px;
+
+    --window-header-button-min-height: 22px;
+    --window-header-button-min-width: 22px;
+    --window-header-button-min-background: transparent;
+    --window-header-button-min-background-hover: #fff4;
+    --window-header-button-min-border-radius: 100%;
+    --window-header-button-min-border-style: none;
+    --window-header-button-min-border-width: 0px;
+    --window-header-button-min-border-color: white;
+    --window-header-button-min-border-offset: 0px;
+    --window-header-button-min-hover-background: #fff4;
+
+
+    --window-header-button-max-height: 22px;
+    --window-header-button-max-width: 22px;
+    --window-header-button-max-background: transparent;
+    --window-header-button-max-background-hover: #fff4;
+    --window-header-button-max-border-radius: 100%;
+    --window-header-button-max-border-style: none;
+    --window-header-button-max-border-width: 0px;
+    --window-header-button-max-border-color: white;
+    --window-header-button-max-border-offset: 0px;
+    --window-header-button-max-hover-background: #fff4;
+
+
+    --window-header-button-cls-height: 22px;
+    --window-header-button-cls-width: 22px;
+    --window-header-button-cls-background: transparent;
+    --window-header-button-cls-background-hover: #f558;
+    --window-header-button-cls-border-radius: 100%;
+    --window-header-button-cls-border-style: none;
+    --window-header-button-cls-border-width: 0px;
+    --window-header-button-cls-border-color: white;
+    --window-header-button-cls-border-offset: 0px;
+    --window-header-button-cls-hover-background: #f558;
+
+
+
+    --window-body-default-background: #222;
+    --window-maximised-header-height: 30px;
+    --window-maximised-header-padding-block: 2px;
+    --window-maximised-header-padding-left: 2px;
+    --window-maximised-header-padding-right: 2px;
+    --window-header-actual-size: calc(max(var(--window-header-min-button-height), var(--window-header-cls-button-height), var(--window-header-max-button-height), var(--window-header-height)) + 2 * var(--window-header-padding-block));
+
+    --panel-padding: 3px;
+    --panel-border-radius: 6px;
+    --panel-background-r: 255;
+    --panel-background-g: 255;
+    --panel-background-b: 255;
+    --panel-background-opacity: 0.3;
+    --panel-border-style: none;
+    --panel-border-width: 0;
+    --panel-border-color: transparent;
+    --panel-highlight-color: #e84;
+}

@@ -1,0 +1,793 @@
+/* background-color: transparent; */
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 12px;
+}
+
+.left {
+    min-width: 300px;
+    max-width: 500px;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    background-color: #0004;
+    /* grid-template-rows: 230px 1fr; */
+}
+
+.right {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.right-top {
+    border-radius: 6px;
+    margin: 6px;
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* border: solid 1px white; */
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 40px 2fr 40px;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+
+    width: 280px;
+}
+
+.right-bottom {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(147, 226, 43); */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.sidebar-selector>span {
+    line-height: 36px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+.sidebar-selector>i {
+    font-size: 28px;
+    align-self: center;
+}
+
+.sidebar-selector {
+    background-color: #fff0;
+    transition: background-color 0.2s ease-in-out;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    grid-template-rows: 36px;
+    grid-column-gap: 12px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: 36px;
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 6px;
+    align-content: center;
+    line-height: 48px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-block: 3px;
+    font-weight: 300;
+}
+
+.sidebar-selector:hover {
+    background-color: #fff4;
+}
+
+.sidebar-selector[data-active="true"] {
+    background-color: #fff3;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar-selector[data-active="true"]:hover {
+    background-color: #fff8;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.test {
+    top: 50%;
+    left: 30px;
+    position: relative;
+    background-color: red;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    background-color: #333;
+    outline: 0px solid #fff8;
+    ;
+    border: 1px solid #fff4;
+    border-radius: 6px;
+    color: #eee;
+    line-height: 24px;
+    height: auto;
+    padding-inline: 12px;
+    padding-block: 3px;
+    font-weight: 300;
+    transition: border 0.1s ease-in-out;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+    outline: 2px solid #fff8;
+    transition: outline 0.1s ease-in-out;
+}
+
+@keyframes settings-button-hover {}
+
+span.settings-header {
+    font-size: 36px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    font-weight: 100;
+    display: block;
+}
+
+span.settings-subcategory {
+    font-size: 12px;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    display: block;
+    font-weight: 500;
+}
+
+div.settings-element {
+    height: 36px;
+    display: grid;
+    grid-template-rows: 36px;
+    grid-column-gap: 12px;
+    grid-row-gap: 0px;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 18px;
+    color: white;
+    border-radius: 6px;
+    width: calc(100% - 12px);
+    margin-block: 6px;
+    position: relative;
+}
+
+div.settings-element.regular {
+    grid-template-columns: 60% 40%;
+    filter: drop-shadow(0px 0px 5px #0006);
+    box-sizing: border-box;
+    padding-right: 12px;
+}
+
+div.settings-element.button {
+    grid-template-columns: 1fr 36px;
+    background-color: #fff2;
+    box-shadow: 0px 0px 10px #0006;
+    filter: drop-shadow(0px 0px 0px #fff0);
+    transition: filter 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+
+div.settings-element.button:hover {
+    filter: drop-shadow(0px 0px 10px #fff6);
+    transition: filter 0.2s ease-in-out;
+}
+
+div.settings-element>.text {
+    font-size: 15px;
+    font-weight: 300;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    line-height: 36px;
+}
+
+color-picker {
+    height: 24px;
+    aspect-ratio: 1;
+    border: solid 2px white;
+    border-radius: 3px;
+    cursor: pointer;
+    align-self: center;
+}
+
+div.right-top>div.header {
+    grid-area: 1 / 1 / 2 / 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+div.header>span {
+    padding-left: 6px;
+    font-size: 24px;
+    font-weight: 300;
+    align-self: center;
+}
+
+div.header>div {
+    align-self: center;
+    justify-self: center;
+    display: block;
+    border: solid 1px #fff7;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: grid;
+    cursor: pointer;
+}
+
+div.header>div:hover {
+    background-color: #fff2;
+}
+
+div.header>div>i {
+    align-self: center;
+    justify-self: center;
+    font-size: 18px;
+}
+
+div.right-top>div.profile-picture {
+    /* width: 100%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    display: block;
+    background-color: #fff5;
+    overflow: hidden;
+    border: solid 2px #fff;
+    box-sizing: border-box; */
+    width: calc(100% - 8px);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    display: block;
+    background-color: #fff5;
+    overflow: hidden;
+    border: solid 2px #fff;
+    box-sizing: border-box;
+    margin: 4px;
+}
+
+div.right-top>div.profile-picture[data-status="Online"] {
+    border: solid 4px #cfc;
+    -webkit-box-shadow: 0px 0px 12px 3px #4c4;
+    box-shadow: 0px 0px 12px 3px #4c4;
+}
+
+div.right-top>div.profile-picture[data-status="Offline"] {
+    border: solid 4px #ccc;
+    -webkit-box-shadow: 0px 0px 12px 3px #444;
+    box-shadow: 0px 0px 12px 3px #444;
+}
+
+div.right-top>div.profile-picture[data-status="Do Not Disturb"] {
+    border: solid 4px #fcc;
+    -webkit-box-shadow: 0px 0px 12px 3px #c44;
+    box-shadow: 0px 0px 12px 3px #c44;
+}
+
+div.right-top>div.profile-picture[data-status="Busy"] {
+    border: solid 4px #ffc;
+    -webkit-box-shadow: 0px 0px 12px 3px #cc4;
+    box-shadow: 0px 0px 12px 3px #cc4;
+}
+
+/* :has(img:hover) */
+
+div.indicator>div.tooltip::before {
+    height: 17px;
+    width: 17px;
+    position: relative;
+    background-color: #555;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 0 0 0 3px;
+    left: -4px;
+    top: 4px;
+    z-index: -1;
+}
+
+div.profile-picture>div.indicator>div.tooltip::after {
+    position: relative;
+    white-space: nowrap;
+}
+
+div.profile-picture[data-status="Do Not Disturb"]>div.indicator>div.tooltip::after {
+    content: "Do Not Disturb"
+}
+div.profile-picture[data-status="Online"]>div.indicator>div.tooltip::after {
+    content: "Online"
+}
+div.profile-picture[data-status="Offline"]>div.indicator>div.tooltip::after {
+    content: "Offline"
+}
+div.profile-picture[data-status="Busy"]>div.indicator>div.tooltip::after {
+    content: "Busy"
+}
+
+div.indicator>div.tooltip {
+    opacity: 0;
+    display: block;
+    height: 24px;
+    width: fit-content;
+    background-color: #555;
+    left: calc(100% + 12px);
+    position: relative;
+    /* profilepx #0008; */
+    visibility: hidden;
+}
+
+div.profile-picture:hover>div.indicator>div.tooltip,
+div.indicator:hover>div.tooltip {
+    animation: showtooltip 0.2s;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+    min-width: 4px;
+    visibility: visible;
+}
+
+
+div.profile-picture>img {
+    height: 100%;
+    width: 100%;
+}
+
+div.indicator {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 126px;
+    left: 78px;
+    border-radius: 100%;
+    border: solid 3px #999;
+    cursor: pointer;
+}
+
+div.profile-picture[data-status="Do Not Disturb"] > div.indicator {
+    background-color: #c44;
+}
+div.profile-picture[data-status="Offline"] > div.indicator {
+    background-color: #444;
+}
+div.profile-picture[data-status="Online"] > div.indicator {
+    background-color: #4c4;
+}
+div.profile-picture[data-status="Busy"] > div.indicator {
+    background-color: #cc4;
+}
+
+
+div.profile-info {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6px 24px 18px 6px 42px;
+}
+
+div.profile-info>div.username {
+    align-content: center;
+    font-weight: 500;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #888;
+}
+
+div.profile-info>div.nickname {
+    align-content: center;
+    font-weight: 300;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.status {
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 300;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 13px;
+    padding-block: 3px;
+    box-sizing: border-box;
+    color: #aaa;
+}
+
+div.profile-buttons {
+    grid-area: 3 / 1 / 4 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 3px;
+    padding-inline: 4px;
+}
+
+div.profile-buttons>div.button {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    border: solid 1px white;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 18px;
+    height: 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    align-self: end;
+}
+
+div.profile-buttons>div.button:hover {
+    background-color: #fff2;
+}
+
+div.profile-buttons>div.button[data-amount]:not([data-amount="0"]):not([data-amount=""]) {
+    font-weight: 500;
+    border: solid 2px white;
+}
+
+div.profile-buttons>div.button[data-amount]:not([data-amount="0"]):not([data-amount=""])::after {
+    content: attr(data-amount-clean);
+    background-color: #d44334;
+    height: 20px;
+    min-width: 18px;
+    width: auto;
+    bottom: 26px;
+    position: absolute;
+    margin-left: 107px;
+    padding: 4px;
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    border-radius: 100px;
+    font-size: 12px;
+    align-content: center;
+    max-width: 36px;
+}
+
+div.temporary-textbox-container {
+        display: grid;
+        grid-template-columns: 1fr 36px;
+        grid-template-rows: 1fr;
+        grid-column-gap: 12px;
+        grid-row-gap: 0px;
+}
+
+input.temporary-textbox-span {
+    align-self: center;
+    padding-inline: 12px;
+    background-color: #0004;
+    border-radius: 6px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+input.temporary-textbox-span:focus ,
+input.temporary-textbox-span:active {
+    outline: none;
+    border: none;
+}
+
+input.temporary-textbox-span:focus {
+    background-color: #0006;
+}
+
+input:not([disabled]).temporary-textbox-span {
+    border: solid 1px #fff4;
+    color: #fff;
+}
+
+input[disabled].temporary-textbox-span:active,
+input[disabled].temporary-textbox-span:focus,
+input[disabled].temporary-textbox-span {
+    user-select: none;
+    border: solid 1px #fff2;
+    color: #bbb;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+div.temporary-textbox-editbutton {
+    background-color: #fff2;
+    border: solid 1px #fff4;
+    display: flex;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+div.temporary-textbox-editbutton:hover {
+    background-color: #fff4;
+    border: solid 1px #fff6;
+    transition: all 0.2s ease-in-out;
+}
+
+div.temporary-textbox-editbutton:active {
+    background-color: #fff6;
+    border: solid 1px #fff8;
+    transition: all 0.2s ease-in-out;
+}
+
+div.installed-apps {
+    height: calc(100% - 110px);
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 6px;
+    background-color: #0004;
+    border: solid 1px #fff4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 24px 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 6px; 
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.app-list {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+div.installed-app-grid {
+    display: grid;
+    grid-template-columns: 18px 4fr 4fr repeat(2, 3fr) 2.5fr 2.1fr 24px;
+    grid-template-rows: 24px;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+div.installed-app-element {
+    height: 24px;
+    width: 100%;
+}
+
+div.installed-app-element:has([data-selected="true"]) {
+    background-color: #fff4;
+}
+
+div.installed-app-header {
+    height: 30px;
+    width: 100%;
+}
+
+span.installed-app-header-button {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: #fff4;
+    align-self: center;
+    font-size: 12px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 22px;
+    border-radius: 6px;
+    padding-inline: 6px;
+    box-sizing: border-box;
+}
+
+span.installed-app-header-button[data-sort="none"]::before {
+    content: " ";
+    position: relative;
+    left: 0px;
+    width: 12px;
+    display: inline-block;
+    top: -1px;
+}
+
+span.installed-app-header-button[data-sort="DESC"]::before {
+    content: "▲";
+    position: relative;
+    left: 0px;
+    width: 12px;
+    display: inline-block;
+    top: -1px;
+}
+
+span.installed-app-header-button[data-sort="ASC"]::before {
+    content: "▼";
+    position: relative;
+    left: 0px;
+    width: 12px;
+    display: inline-block;
+    top: -1px;
+}
+
+span.installed-app-element-text {
+    align-self: center;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+span.installed-app-header-button:hover {
+    background-color: #fff6;
+}
+
+.installed-app-cb {
+    justify-self: center;
+  align-self: center;
+  cursor: pointer
+}
+
+.app-start-icon {
+    cursor: pointer;
+}
+
+input[type="checkbox"].menu {
+    visibility: hidden;
+}
+
+div.menu-button {
+    height: 36px;
+    background-color: var(--primaryBackground);
+    color: var(--primaryText);
+
+    aspect-ratio: 1;
+    transition: background-color 0.1s ease-out, box-shadow 0.1s ease-out;
+    overflow: visible;
+    z-index: 1;
+}
+
+
+.preview-button {
+    position: absolute;
+    bottom: 12px;
+    z-index: 0;
+    left: 12px;
+}
+
+.cancel-button {
+    position: absolute;
+    bottom: 12px;
+    z-index: 0;
+    right: 82px;
+}
+
+.save-button {
+    position: absolute;
+    bottom: 12px;
+    background-color: #224;
+    z-index: 0;
+    right: 12px;
+}
+
+/* div.preview-button:hover {
+    background-color: #333;
+    box-shadow: 0 0 12px #fff4;
+    transition: box-shadow 0.1s ease-in, background-color 0.1s ease-in;
+} */
+
+div.menu-button:has(input:checked) {
+    background-color: transparent;
+    transition: background-color 0.1s ease-in, box-shadow 0.1s ease-in;
+    box-shadow: 0 0 0 transparent;
+    cursor: default;
+    z-index: 1;
+}
+
+div.menu-button:hover {
+    background-color: #fff4;
+    transition: background-color 0.1s ease-in;
+}
+
+
+div.menu-button > form > label {
+    height: 36px;
+    width: 36px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+div.menu-button > div.menu {
+    width: 240px;
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    background-color: #fff1;
+    z-index: 0;
+    transform: translateX(-100%);
+    box-sizing: border-box;
+    padding-top: 36px;
+    transition: translate 0.1s ease-out, opacity 0.1s ease-out;
+    box-shadow: 0px 0px 12px #0004;
+    opacity: 0;
+}
+
+div.menu-button:has(input:checked) > div.menu {
+    backdrop-filter: blur(5px);
+    transform: none;
+    transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+    opacity: 1;
+}
+
+div.menu-button > form > label > div.menu-button-header {
+    --offset: 52px;
+    height: 36px;
+    position: absolute;
+    left: var(--offset);
+    z-index: 1;
+    font-size: 24px;
+    align-self: center;
+    font-weight: 300;
+    line-height: 34px;
+    translate: calc(-100% - var(--offset)) 0;
+    transition: translate 0.1s ease-out
+}
+
+div.menu-button:has(input:checked) > form > label > div.menu-button-header {
+    translate: 0 0;
+    transition: translate 0.1s ease-in
+}
+
+div.menu-button > form > label > i {
+    position: absolute;
+    rotate: 0deg;
+    transition: rotate 0.1s ease-out;
+}
+
+div.menu-button:has(input:checked) > form > label > i {
+    rotate: 180deg;
+    transition: rotate 0.1s ease-in;
+}

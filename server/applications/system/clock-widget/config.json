@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Clock Widget",
+    "type": "widget",
+    "windows": [{
+        "defaultWidth": 260,
+        "defaultHeight": 120,
+        "minWidth": 0,
+        "minHeight": 0,
+        "resizable": false,
+        "html": "clock-widget.html",
+        "js": "clock-widget.js",
+        "css": "clock-widget.css",
+        "draggable": true
+    }],
+    "icon": "settings.png",
+    "about": "An example application"
+}

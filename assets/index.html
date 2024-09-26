@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desktop</title>
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/desktop.css">
+	<link rel="stylesheet" href="css/window.css">
+	<link rel="stylesheet" href="css/ui.css">
+	<link rel="stylesheet" href="css/de.css">
+	<!-- <link rel="stylesheet" href="/css/panels.css"> -->
+	<link id="themestyle" rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="boxicons-2.1.4/css/boxicons.min.css" type="text/css">
+    <script type="text/Javascript">
+        const globalGetElementById = (str) => {
+            const re = document.getElementById(str);
+            return re;
+        }
+        const globalCreate = (str) => {
+            if (str.toLowerCase() == "script") {
+                alert("Insufficient Permissions to create script elements!")
+            }
+            return document.createElement(str)
+        }
+    </script>
+	<!-- <script src="https://kit.fontawesome.com/99a9767404.js" crossorigin="anonymous"></script> -->
+	<script src="../src/main.js" type="module" defer></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <!-- <div class="desktop-symbols-container-outer" id="sysdsouter">
+        <div class="desktop-symbols-container" id="sysdscontainer"></div>
+    </div> -->
+    <!-- <div class="login-main">
+        <div class="login-container">
+            <input type="text" id="username" placeholder="username">
+            <div></div>
+            <input type="password" id="password" placeholder="password">
+            <input type="button" id="login" name="login" value="login">
+        </div>
+    </div> -->
+
+    <!-- <div class="desktop-clock" id="clock-main" data-time="12:34" data-date="Monday, July 3rd 2036" data-type="widget">
+
+    </div> -->
+
+    <div class="snap-preview" id="snapping-prev" data-visible="false"></div>
+    <!-- TASKBAR -->
+    <task-bar style="visibility: hidden;">
+        <taskbar-button id="home" data-action="home" data-ignore="startmenu"></taskbar-button>
+        <taskbar-button id="search" data-action="search" data-ignore="search"></taskbar-button>
+    </task-bar>
+    <!-- <notification-box data-visible="true">
+        <div class="notification-icon">
+            <img src="/media/icons?i=icons8-notepad-96.png">
+        </div>
+        <div class="notification-main">
+            <div class="notification-title">Notification Title oman pls to help</div>
+            <div class="notification-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        </div>
+    </notification-box> -->
+    <!-- STARTMENU -->
+    <start-menu data-active="false" data-closeonfocus="true" data-ignore="startmenu">
+        <div class="sm-topbar" data-login="false" id="sm-topbar" data-ignore="startmenu">
+        </div>
+    </start-menu>
+    <desktop-search data-active="false" data-closeonfocus="true" data-ignore="search"><input type="text" data-type="desktopsearch" data-ignore="search"></desktop-search>
+    <desktop-hub>
+        <div class="hub-title">
+            <div class="settings-button" id="desktop-hub-settings"><i class='bx bxs-cog bx-lg' ></i></div>
+            <div class="title"><span>Hub</span></div>
+        </div>
+        <div class="topright">
+            <div id="desktop-hub-close" class="closebtn"><i class='bx bx-x bx-md' ></i></div>
+        </div>
+        <div class="window-group"></div>
+        <div class="message-widget"></div>
+        <div class="weather-widget"></div>
+    </desktop-hub data-open="false">
+    <noscript>
+        <div class="no-script" id="noscripterror">
+            <div class="noscript-background">
+                <div>
+                    <div class="noscript-icon"></div>
+                    <div class="noscript-warning"><p><b>This website requires Javascript</b><br>Please allow Javascript to access this site.</p></div>
+                </div>
+            </div>
+        </div>
+    </noscript>
+  </body>
+</html>

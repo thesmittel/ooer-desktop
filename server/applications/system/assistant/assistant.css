@@ -1,0 +1,364 @@
+
+background: transparent;
+
+
+
+
+
+.convo-list {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-right: 20px;
+    width: 240px;
+    height: 100%;
+    left: -230px;
+    position: relative;
+    z-index: 1;
+    background-color: #fff3;
+    backdrop-filter: blur(15px);
+    border-radius: 0 20px 20px 0;
+    transition: left 0.2s ease-in-out, box-shadow 0.1s ease-in-out, width 0.2s ease-in-out;
+    box-shadow: 0px 0px 12px #0006;
+}
+
+.convo-list[data-active="false"]:hover {
+    cursor:pointer
+}
+
+.convo-list[data-active="true"] {
+    left: 0;
+    transition: left 0.2s ease-in-out;
+    cursor: auto;
+}
+
+.model-list {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 230px;
+    height: calc(100% - 20px);
+    left: -220px;
+    position: absolute;
+    z-index: 2;
+    background-color: #fff3;
+    box-shadow: 0px 0px 12px #0006;
+    transition: left 0.2s ease-in-out;
+    display: inline-block;
+    backdrop-filter: blur(15px);
+    border-radius: 0 10px 10px 0;
+    text-indent: 3%;
+    padding-top: 3%;
+    top: 10px;
+}
+
+.model-list[data-active="true"] {
+    left: 0;
+    transition: left 0.2s ease-in-out;
+}
+.model-list[data-active="false"]:hover {
+    cursor:pointer
+}
+.model-list > * {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.model-list[data-active="true"] > * {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.convo-list > .convo-list-inner {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.convo-list[data-active="true"] > .convo-list-inner {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.container {
+    display: block;
+    /* display: grid;
+    grid-template-columns: 60px 240px 1fr; */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    container-type: inline-size;
+}
+
+@container (min-width: 700px) {
+    .conversation {
+        width: calc(100% - 240px) !important;
+        transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    }
+
+    .convo-list {
+        left: 0 !important;
+        cursor: auto !important;
+        border-radius: 0;
+        width: 230px;
+        transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+        /* width: 220px !important; */
+    }
+
+    .convo-list[data-active="true"] {
+        left: 0 !important;
+        cursor: auto !important;
+    }
+
+    .convo-list > * {
+        opacity: 1 !important;
+    }
+
+
+}
+
+.conversation {
+    width: calc(100% - 20px);
+    right: 0;
+    height: 100%;
+    display: grid;
+    /* grid-template-rows: 1fr 64px; */
+    position: absolute;
+    top: 0;
+    container: container / inline-size;
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+.model-list > h1 {
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.convo-list > .convo-list-inner > h1 {
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.convo-list-inner {
+    left: 10%;
+    width: 90%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    top: 1%;
+}
+
+.modelbutton {
+    width: 100%;
+    height: 48px;
+    margin-block: 3px;
+    background-color: #0002;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding-inline: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: solid 0px transparent;
+    transition: outline 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    /* justify-content: center; */
+}
+
+.modelbutton:hover {
+    outline: solid 3px #fff4;
+    background-color: #0004;
+    transition: outline 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.model-list-container {
+    height: auto;
+    max-height: calc(100% - 48px);
+    top: 48px;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 9%;
+    padding-left: 3%;
+}
+
+.bubbles-main {
+    height: 100%;
+    width: 100%;
+}
+
+.bubbles {
+    bottom: 52px;
+    height: auto;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    max-height: calc(100% - 52px);
+    scrollbar-width: thin;
+}
+
+textarea.textbox {
+    height: fit-content;
+    background-color: transparent;
+}
+div.textfield {
+    scrollbar-width: none;
+    height: auto; /*40px;*/
+    color: #ddd;
+    background-color: #0008;
+    border: solid 1px white;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px;
+    padding-right: 9px;
+    padding-left: 9px;
+    outline: none;
+    border-radius: 20px;
+    padding-left: 24px;
+    padding-right: 72px;
+    bottom: 0;
+    position: absolute;
+    max-height: 128px;
+    min-height: 40px;
+}
+
+.textwrap {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff3;
+    width: 100%;
+    display: block;
+    height: fit-content;
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.textarea {
+    height: auto;
+    min-height: 20px;
+    display: block
+}
+
+.grow-wrap {
+    /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+    display: grid;
+    max-height: 120px;
+    min-height: 40px;
+    border: solid 1px #fff8;
+    padding-block: 10px;
+    padding-left: 12px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 12px);
+    overflow-y: scroll;
+    background-color: #0006;
+    margin-bottom: 12px;
+    scrollbar-width: none;
+  }
+  .grow-wrap::after {
+    /* Note the weird space! Needed to prevent jumpy behavior */
+    content: attr(data-replicated-value) " ";
+    user-select: auto;
+  
+    /* This is how textarea text behaves */
+    white-space: pre-wrap;
+  
+    /* Hidden from view, clicks, and screen readers */
+    visibility: hidden;
+  }
+  .grow-wrap > textarea {
+    /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+    resize: none;
+    background-color: transparent;
+  
+    /* Firefox shows scrollbar on growth, you can hide like this. */
+    overflow: hidden;
+  }
+  .grow-wrap > textarea,
+  .grow-wrap::after {
+    /* Identical styling required!! */
+    border: none;
+    outline: none;
+    font: inherit;
+    line-height: 1;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    overflow-y: hidden;
+    padding-right: 40px;
+    /* Place on top of each other */
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+
+a.send {
+    position: absolute;
+    right: 17px;
+    bottom: 17px;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+a.send:hover > i {
+    color: #ccc;
+}
+
+a.send:active > i  {
+    color: #99c;
+}
+
+.messageparent {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    margin-block: 12px;
+    display: flex;
+}
+
+.messageparent.ai {
+    justify-content: left;
+}
+
+.messageparent.human {
+    justify-content: right;
+}
+
+.message * {
+    user-select: text;
+    color: inherit;
+}
+
+.message {
+    user-select: text;
+    min-width: 64px;
+    max-width: 60%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    width: fit-content;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.message.human {
+    right: 24px;
+    background-color: azure;
+    color: black;
+    border-radius: 12px 12px 0 12px;
+}
+
+.message.ai {
+    left: 24px;
+    background-color: lightslategray;
+    color: black;
+    border-radius: 12px 12px 12px 0;
+}

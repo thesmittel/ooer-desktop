@@ -1,0 +1,126 @@
+{
+    "users": [
+        {
+            "id": "000000000000",
+            "username": "username",
+            "nickname": "A funny nickname",
+            "email": "johndoe@example.com",
+            "banner": null,
+            "avatar": null,
+            "status": "offline",
+            "about": "Yep this is me",
+            "registered_apps": [
+                "000000000001",
+                "000000000002"
+            ],
+            "locked_apps": [
+                "notepad",
+                "000000000001",
+                "assistant"
+            ],
+            "desktop_setup": [
+                {
+                    "type": "widget",
+                    "pos": [0, 128],
+                    "anchor": ["top", "center"],
+                    "widgetid": "system.clock",
+                    "configuration": {
+                        "style": "",
+                        "width": "400px",
+                        "height": "240px"
+                    }
+                }
+            ],
+            "desktop_symbols": [
+                {
+                    "appid": "000000000001",
+                    "text": "example",
+                    "label": null,
+                    "icon": null,
+                    "position": [1,4],
+                    "locked": true
+                },
+                {
+                    "appid": "000000000002",
+                    "text": "aaa",
+                    "label": null,
+                    "icon": null,
+                    "position": [4,3],
+                    "locked": false
+                },
+
+                {
+                    "appid": "assistant",
+                    "text": "llama probably",
+                    "label": null,
+                    "icon": null,
+                    "position": [2,4],
+                    "locked": true
+                },
+
+                {
+                    "appid": "settings",
+                    "text": "Settings",
+                    "label": null,
+                    "icon": null,
+                    "position": [2,3],
+                    "locked": false
+                },
+
+                {
+                    "appid": "notepad",
+                    "text": "Notepad",
+                    "label": null,
+                    "icon": null,
+                    "position": [1,3],
+                    "locked": true
+                },
+
+                {
+                    "appid": "terminal",
+                    "text": "Terminal",
+                    "label": null,
+                    "icon": null,
+                    "position": [1,5],
+                    "locked": false
+                },
+
+                {
+                    "appid": "settings_app",
+                    "text": "Settings2",
+                    "label": "test",
+                    "icon": null,
+                    "position": [1,6],
+                    "locked": false
+                },
+
+                {
+                    "appid": "profile",
+                    "text": "Profile",
+                    "label": null,
+                    "icon": null,
+                    "position": [2,6],
+                    "locked": false
+                },
+                {
+                    "appid": "themes",
+                    "text": "Themes",
+                    "label": null,
+                    "icon": null,
+                    "position": [7,3],
+                    "locked": false
+                }
+            ]
+        },
+        {
+            "id": "203295914258",
+            "username": "user",
+            "nickname": null,
+            "email": "",
+            "banner": null,
+            "avatar": null,
+            "status": "online",
+            "about": null
+        }
+    ]
+}

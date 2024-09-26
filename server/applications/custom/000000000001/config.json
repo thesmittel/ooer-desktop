@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Example App",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 800,
+        "defaultHeight": 480,
+        "minWidth": 240,
+        "minHeight": 70,
+        "resizable": true,
+        "title": "Example",
+        "html": "example.html",
+        "js": "example.js",
+        "css": "example.css",
+        "draggable": true
+    }],
+    "icon": "icon.png",
+    "about": "An example application"
+}

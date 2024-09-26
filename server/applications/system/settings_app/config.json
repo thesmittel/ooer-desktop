@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Settings",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 900,
+        "defaultHeight": 500,
+        "minWidth": 800,
+        "minHeight": 450,
+        "resizable": true,
+        "title": "Settings",
+        "html": "settings.html",
+        "js": "settings.js",
+        "css": "settings.css",
+        "draggable": true
+    }],
+    "icon": "settings.png",
+    "about": "An example application"
+}

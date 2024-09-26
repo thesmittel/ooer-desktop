@@ -1,0 +1,365 @@
+.window>.window-header>.window-title {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: var(--window-header-title-alignment);
+    height: var(--window-header-height);
+    font-weight: var(--window-header-title-weight);
+    font-family: var(--window-header-title-font);
+    font-size: var(--window-header-title-size);
+    overflow: hidden;
+}
+
+
+.window > .header-wrap {
+    width: calc(100% + var(--window-padding-inline) * 2);
+    position: absolute;
+    display: block;
+    height: calc(var(--window-header-height) + 2 * var(--window-header-padding-block));
+    box-sizing: border-box;
+    left: calc(-1 * var(--window-padding-inline));
+    top: calc(-1 * var(--window-padding-top));
+    border-radius: var(--window-border-radius) var(--window-border-radius) var(--window-header-bottom-radius) var(--window-header-bottom-radius);
+    background: var(--window-header-background);
+    padding-block: var(--window-header-padding-block);
+    padding-left: var(--window-header-padding-left);
+    padding-right: var(--window-header-padding-right);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.window[data-maximised="true"] > .header-wrap {
+    top:0;
+    height: calc(var(--window-maximised-header-height) + 2 * var(--window-maximised-header-padding-block));
+
+    padding-block: var(--window-maximised-header-padding-block);
+    padding-left:  var(--window-maximised-header-padding-left );
+    padding-right: var(--window-maximised-header-padding-right);
+}
+
+.window > .header-wrap >.window-header {
+
+    position: relative;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: var(--window-header-icon-width) var(--window-header-title-width) var(--window-header-minimise-width) var(--window-header-maximise-width) var(--window-header-close-width);
+
+
+}
+
+.window[data-maximised="true"][data-minimised="false"] {
+    border-radius: var(--window-maximised-border-radius);
+    height: calc(100% - calc(var(--window-maximised-offset) * 2)) !important;
+    width: calc(100% - calc(var(--window-maximised-offset) * 2)) !important;
+    top: var(--window-maximised-offset) !important;
+    left: var(--window-maximised-offset) !important;
+    padding: 0 !important;
+    transition: all 0.05s ease-in-out;
+    border: none;
+}
+
+.window {
+    background-color: var(--window-background);
+    backdrop-filter: var(--window-backdrop-filter);
+    border-radius: var(--window-border-radius);
+    padding: var(--window-padding-top) var(--window-padding-inline) var(--window-padding-bottom) var(--window-padding-inline);
+    display: block;
+    position: fixed;
+    -webkit-box-shadow: var(--window-shadow);
+    box-shadow: var(--window-shadow);
+    /* transition: all 0.1s ease-in-out; */
+    border-width: var(--window-border-width);
+    border-color: var(--window-border-color);
+    border-style: var(--window-border-style);
+    box-sizing: border-box;
+}
+
+
+
+.window[data-minimised="true"] {
+    height: 20px !important;
+    top: 100% !important;
+    transition: height 0.05s ease-out, top 0.05s ease-out;
+}
+
+.window[data-maximised="true"]>.window-body {
+    top: calc(var(--window-maximised-header-height) + var(--window-maximised-header-padding-block) * 2);
+    /* top: var(--window-header-actual-size); */
+    height: calc(100% - var(--window-maximised-header-padding-block) * 2 - var(--window-maximised-header-height));
+}
+
+.window[data-maximised="true"]>.header-wrap >.window-header {
+    border-radius: 0 !important;
+    height: 100%;
+    top: 0px;
+    padding-right: 8px;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.window[data-maximised="true"]>.header-wrap >.window-header>.window-icon {
+    top: 0;
+}
+
+
+
+.window[data-maximised="true"]>.header-wrap >.window-header>.window-title {
+    /* top: 2px; */
+}
+
+
+.window>.header-wrap >.window-header>.window-icon {
+    inset: 0;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    /* top: -4px */
+}
+
+.window>.header-wrap >.window-header>.window-icon>img {
+    height: var(--window-header-icon-size);
+    width: var(--window-header-icon-size);
+    align-self: center;
+
+}
+
+.window[data-maximised="true"]>.header-wrap >.window-header>.window-controls {
+    /* border-radius: 0;
+    right: 12px;
+    top: 5px; */
+    border-radius: 0;
+    right: 0;
+    top: 0;
+}
+
+/* .window > .window-header > a {
+    height: 20px;cls
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20px 20px 20px;
+    column-gap: 12px;
+    cursor: pointer;
+}
+
+
+
+.window > .window-header > .window-controls {
+    height: 28px;
+    position: absolute;
+    right: -4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20px 20px 20px;
+    column-gap: 12px;
+    cursor: pointer;
+    width: 108px;
+    border-radius: 0 6px 0 0;
+    top: -4px;
+}
+*/
+.window>.header-wrap >.window-header>a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: #222;
+    border-radius: 100px;
+    justify-self: center;
+}
+
+.window>.header-wrap >.window-header>a[data-action="min"]:hover {
+    background: var(--window-header-button-min-hover-background);
+    /* border: solid 1px #ddd; */
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+
+.window>.header-wrap >.window-header>a[data-action="max"]:hover,
+.window>.header-wrap >.window-header>a[data-action="res"]:hover {
+    background: var(--window-header-button-max-hover-background);
+    /* border: solid 1px #ddd; */
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+password-prompt > password-prompt-header > a[data-action="cls"]:hover,
+.window>.header-wrap >.window-header>a[data-action="cls"]:hover {
+    background: var(--window-header-button-cls-hover-background);
+    /* border: solid 1px #f55; */
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+
+.window>.header-wrap >.window-header>a[data-action="min"] {
+    box-sizing: border-box;
+    transition: all 0.2s;
+    background: var(--window-header-button-min-background) ;
+    height: var(--window-header-button-min-height);
+    width: var(--window-header-button-min-width);
+    outline-style: var(--window-header-button-min-border-style);
+    outline-width: var(--window-header-button-min-border-width);
+    outline-color:  var(--window-header-button-min-border-color);
+    outline-offset: var(--window-header-button-min-border-offset);
+}
+
+.window>.header-wrap >.window-header>a[data-action="max"],
+.window>.header-wrap >.window-header>a[data-action="res"] {
+    box-sizing: border-box;
+    transition: all 0.2s;
+    background: var(--window-header-button-max-background) ;
+    height: var(--window-header-button-max-height);
+    width: var(--window-header-button-max-width);
+    outline-style: var(--window-header-button-max-border-style);
+    outline-width: var(--window-header-button-max-border-width);
+    outline-color:  var(--window-header-button-max-border-color);
+    outline-offset: var(--window-header-button-max-border-offset);
+}
+
+password-prompt > password-prompt-header > a[data-action="cls"],
+.window>.header-wrap >.window-header>a[data-action="cls"] {
+    /* border: solid 1px #ddd; */
+    box-sizing: border-box;
+    transition: all 0.2s;
+    background: var(--window-header-button-cls-background) ;
+    height: var(--window-header-button-cls-height);
+    width: var(--window-header-button-cls-width);
+    outline-style: var(--window-header-button-cls-border-style);
+    outline-width: var(--window-header-button-cls-border-width);
+    outline-color:  var(--window-header-button-cls-border-color);
+    outline-offset: var(--window-header-button-cls-border-offset);
+}
+
+
+
+/* OLD DESIGN */
+
+/*
+.window > .window-header > .window-controls > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    height: 20px;
+    aspect-ratio: 1;
+    transition: all 0.2s;
+}
+.window > .window-header > .window-controls > a[data-action="min"]:hover {
+    background-color: #fff4;
+    border: solid 2px #ddd;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.window > .window-header > .window-controls > a[data-action="max"]:hover {
+    background-color: #fff4;
+    border: solid 2px #dddf55;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.window > .window-header > .window-controls > a[data-action="res"]:hover {
+    background-color: #fff4;
+    border: solid 2px #ddd;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.window > .window-header > .window-controls > a[data-action="cls"]:hover {
+    background-color: #f558;
+    border: solid 2px #f55;
+    box-sizing: border-box;
+    transition: all 0.2s;
+} */
+
+.window>.window-body {
+    display: block;
+    height: calc(100% - var(--window-header-padding-block) * 2 - var(--window-header-height));
+    position: relative;
+    background-color: var(--window-body-default-background);
+    width: 100%;
+    border-radius: calc( var(--window-border-radius) - var(--window-padding-bottom) );
+    overflow: scroll;
+    top: calc(max(var(--window-header-height), 0px) + var(--window-header-padding-block) * 2)
+}
+
+.window>.resize {
+    position: fixed;
+    display: block;
+    z-index: 10;
+}
+
+.window>.resize.left {
+    width: 4px;
+    cursor: ew-resize;
+    left: 0;
+    height: calc(100% - 24px);
+    top: 12px;
+}
+
+.window>.resize.right {
+    width: 4px;
+    cursor: ew-resize;
+    right: 0;
+    height: calc(100% - 24px);
+    top: 12px;
+}
+
+.window>.resize.top {
+    height: 4px;
+    cursor: ns-resize;
+    top: 0;
+    width: calc(100% - 24px);
+    left: 12px;
+}
+
+.window>.resize.bottom {
+    height: 4px;
+    cursor: ns-resize;
+    bottom: 0;
+    width: calc(100% - 24px);
+    left: 12px;
+}
+
+.window>.resize.bottomleft {
+    height: 12px;
+    width: 12px;
+    cursor: nesw-resize;
+    bottom: 0;
+    left: 0;
+}
+
+.window>.resize.bottomright {
+    height: 12px;
+    width: 12px;
+    cursor: nwse-resize;
+    bottom: 0;
+    right: 0;
+}
+
+.window>.resize.topleft {
+    height: 12px;
+    width: 12px;
+    cursor: nwse-resize;
+    top: 0;
+    left: 0;
+}
+
+.window>.resize.topright {
+    height: 12px;
+    width: 12px;
+    cursor: nesw-resize;
+    top: 0;
+    right: 0;
+}
+
+.about-to-be-maximised {
+    z-index: 9991 !important;
+}

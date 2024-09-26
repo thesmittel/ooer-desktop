@@ -1,0 +1,26 @@
+<div class="container">
+    
+    <div class="convo-list" id="convo-list" data-active="false">
+        <div class="model-list" id="model-list" data-active="false">
+            <h1>Models</h1>
+            <div class="model-list-container" id="model-list-container"></div>
+        </div>
+        <div class="convo-list-inner">
+            <h1>Conversations</h1>
+        </div>
+    </div>
+    <div class="conversation" id="conversation">
+        <div class="bubbles-main">
+            <div class="bubbles" id="convo-bubbles"></div>
+        </div>
+        <div id="inputwrap" class="grow-wrap">
+            <textarea rows="1" name="text" placeholder="Prompt" id="text" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+        </div>
+        <!-- <div class="textwrap" id="inputwrap">
+            <span class="textarea" role="textbox" id="text" contenteditable></span>
+        </div> -->
+        <a class="send" id="send">
+            <i class="fa-solid fa-circle-chevron-right fa-2x"></i>
+        </a>
+    </div>
+</div>

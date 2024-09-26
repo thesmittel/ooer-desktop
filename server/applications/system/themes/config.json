@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "author": "Smittel",
+  "name": "Themes",
+  "type": "windowed",
+  "windows": [
+    {
+      "defaultWidth": 900,
+      "defaultHeight": 500,
+      "minWidth": 800,
+      "minHeight": 450,
+      "resizable": true,
+      "title": "Themes",
+      "html": "themes.html",
+      "js": "themes.js",
+      "css": "themes.css",
+      "draggable": true
+    }
+  ],
+  "icon": "settings.png",
+  "about": "Manage and create themes",
+  "contextmenu": [
+    {
+      "type": "list",
+      "items": [
+        {
+          "label": "Home",
+          "symbol": "bx-home-alt-2"
+        },{
+          "label": "User",
+          "symbol": "bx-user"
+        },{
+          "label": "Packages",
+          "symbol": "bxs-package"
+        },{
+          "label": "Language and Time",
+          "symbol": "bx-globe"
+        },{
+          "label": "Privacy",
+          "symbol": "bx-lock-alt"
+        },{
+          "label": "Social",
+          "symbol": "bx-network-chart"
+        }
+      ]
+    }
+  ]
+}

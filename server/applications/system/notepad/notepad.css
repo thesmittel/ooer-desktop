@@ -1,0 +1,161 @@
+.optionsbar {
+    height: 24px;
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    box-sizing: border-box;
+    padding-right: 2px;
+    border-radius: 0 0 5px 0;
+    white-space: nowrap;
+    z-index: 2;
+}
+.optionsbutton {
+    padding-inline: 6px;
+    top: 1px;
+    border-radius: 3px;
+    line-height: 24px;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 3px;
+    width: fit-content;
+    position: relative;
+    overflow: visible;
+    height: 22px;
+}
+.optionsbutton:not(:has(a:hover)):hover {
+    background-color: #fff2;
+}
+.optionsbutton:not(:has(a:active)):active {
+    background-color: #fff4;
+}
+.options-submenu > a {
+    height: 24px;
+    padding: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    line-height: 18px;
+}
+
+.options-submenu > a:hover {
+    background-color: #fff1;
+    
+}
+.options-submenu > a:active {
+    background-color: #fff2;
+}
+
+.options-submenu > hr {
+    margin-block: 3px;
+    margin-inline: 6px;
+    color: #fff1;
+    background-color: #0000;
+}
+
+.options-submenu[data-active="true"] {
+    margin-top:-1px;
+    height: fit-content;
+    width: 120px;
+    position: absolute;
+    background-color: #0004;
+    border-radius: 0 6px 6px 6px;
+    padding: 3px;
+    height: fit-content;
+}
+.options-submenu[data-active="false"] {
+    height: fit-content;
+    visibility: hidden;
+    margin-top:-1px;
+    height: fit-content;
+    width: 120px;
+    position: absolute;
+    background-color: #0004;
+    border-radius: 0 6px 6px 6px;
+    padding: 3px;
+    height: fit-content;
+}
+.textfield {
+    outline: none;
+    border: none;
+    border-radius: 0 0 6px 6px;
+    height: calc(100% - 24px);
+    padding: 6px;
+    width: 100%;
+    display: block;
+    background-color: #222;
+    color: white;
+    box-sizing: border-box;
+    position: absolute;
+    top: 24px;
+    font-family: Roboto, sans-serif;
+    z-index: 1;
+    resize: none;
+    font-weight: 300;
+}
+.closeDialog {
+    background-color: #000a;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.closeDialog > div {
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    display: block;
+}
+
+.closeDialog > div > div.text {
+    color: white;
+    font-size: large;
+    text-align: center;
+    padding-block: 40px;
+}
+.closeDialog > div > div.buttonsCont {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 20px;
+}
+
+.closeDialog > div > div.buttonsCont > a {
+    vertical-align: middle;
+    height: 40px;
+    width: 120px;
+    border: solid 2px white;
+    background-color: transparent;
+    border-radius: 20px;
+    display: inline-block;
+    margin-inline: 12px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 500;
+    cursor: pointer
+}
+
+.closeDialog > div > div.buttonsCont > a:hover {
+    background-color: #fff2;
+}
+
+.closeDialog > div > div.buttonsCont > a[data-default="true"] {
+    background-color: white;
+    color: black;
+}
+
+.closeDialog > div > div.buttonsCont > a[data-default="true"]:hover {
+    
+    background-color: #fffa;
+}

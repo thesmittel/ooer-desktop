@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "author": "Smittel",
+    "name": "Profile",
+    "type": "windowed",
+    "windows": [{
+        "defaultWidth": 900,
+        "defaultHeight": 500,
+        "minWidth": 800,
+        "minHeight": 450,
+        "resizable": true,
+        "title": "Profile",
+        "html": "profile.html",
+        "js": "profile.js",
+        "css": "profile.css",
+        "draggable": true
+    }],
+    "icon": "profile.png",
+    "about": "Manage your profile"
+}

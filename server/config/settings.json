@@ -1,0 +1,104 @@
+{
+    "appearance": {
+        "data": {
+            "id": "settings_appearance",
+            "onclick": "appearance",
+            "icon": "fa-solid fa-paintbrush",
+            "display": "Appearance"
+        },
+        "settings": {
+            "colors": {
+                "display": "Colors",
+                "elements": {
+                    "dark-mode": {"type": "toggle", "display": "Darkmode", "value": true},
+                    "bottom-clock": {"type": "color", "display": "Clock Color", "value": [2,44,0, 0.1]}
+                }
+            },
+            "desktop": {
+                "display": "Desktop",
+                "elements": {
+                    "freeflow": {"type": "toggle", "display": "Align symbols to grid", "value": true},
+                    "gridsize": {"type": "numbersXY", "display": "Number of symbols", "value": [12, 12]},
+                    "clockface": {"type": "dropdown", "display": "Clock Face", "options": ["Roboto", "Segment"], "value": "Roboto"},
+                    "displayclock": {"type": "toggle", "display": "Display Clock on Desktop", "value": true},
+                    "displaydate": {"type": "toggle", "display": "Display Date on Desktop", "value": true},
+                    "background-image": {"type": "file", "display": "Background Image", "value": null}
+                }
+            },
+            "widgets": {
+                "display": "Widgets",
+                "elements": {
+                    "notes": {"type": "toggle", "display": "Notes", "value": true},
+                    "calendar": {"type": "toggle", "display": "Calendar", "value": true}
+                }
+            }
+        }
+    },
+    "language": {
+        "data": {
+            "id": "settings_language",
+            "onclick": "language",
+            "icon": "fa-solid fa-globe",
+            "display": "Language"
+        },
+        "settings": {
+            "language": {"type": "dropdown", "display": "Language", "options": ["en-US", "de-DE", "fr-FR"], "value": "en-US"}
+        }
+    },
+    "notifications": {
+        "data": {
+            "id": "settings_notifications",
+            "onclick":"notifications",
+            "icon": "fa-regular fa-bell",
+            "display": "Notifications"
+        },
+        "settings": {
+            "login-notification": {"type": "toggle", "display": "Login Notification", "value": true},
+            "friend-request": {"type": "toggle", "display": "Friend Request", "value": true},
+            "messages": {"type": "toggle", "display": "Messages", "value": true},
+            "events": {"type": "toggle", "display": "Events", "value": true},
+            "calendar": {"type": "toggle", "display": "Calendar", "value": true},
+            "server": {"type": "toggle", "display": "Server Notificatons", "value": true}
+        }
+    },
+    "profile": {
+        "data": {
+            "id": "settings_profile",
+            "onclick":"profile",
+            "icon": "fa-solid fa-user",
+            "display": "Profile"
+        },
+        "settings": {
+            "banner": {"type": "file", "display": "Banner", "value": "default"},
+            "username": {"type": "text", "display": "Username", "value": "\ngrabusername\n"},
+            "handle": {"type": "text", "display": "Handle", "value": "\ngrabhandle\n", "restrict": "[0-9]{4}"},
+            "password": {"type": "button", "display": "Password", "value": null, "open": "chpwdialog"},
+            "email": {"type": "text", "display": "E-Mail", "value": "\ngrabemail\n", "restrict": ".{2,64}@\\w{2,256}\\.[a-zA-Z]+"}
+        }
+    },
+    "friends": {
+        "data": {
+            "id": "settings_friends",
+            "onclick":"friends",
+            "icon": "fa-solid fa-users",
+            "display": "Friends"
+        },
+        "settings": {
+            "discretionLevel": {"type": "dropdown", "display": "Filter profanity","options": ["Nothing", "Severe profanity only", "Everything"], "value": "Severe profanity only"}
+        }
+    },
+    "privacy": {
+        "data":{
+            "id": "settings_privacy",
+            "onclick":"privacy",
+            "icon": "fa-solid fa-user-lock",
+            "display": "Privacy"
+        },
+        "settings": {
+            "showEmail": {"type": "toggle", "display": "Show Email on profile", "value": "false"},
+            "showProfilePic": {"type": "dropdown", "display": "Show profile picture to","options": ["Everyone", "Friends of friends", "Nobody"], "value": "Friends of friends"},
+            "allowRequests": {"type": "dropdown", "display": "Allow friend requests from","options": ["Everyone", "Friends of friends", "Nobody"], "value": "Friends of friends"},
+            "allowMessages": {"type": "dropdown", "display": "Allow messages from","options": ["Everyone", "Friends of friends", "Nobody"], "value": "Friends of friends"}
+        }
+    }
+}

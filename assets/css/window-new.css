@@ -1,0 +1,33 @@
+app-window {
+    background-color: var(--window-background);
+    backdrop-filter: var(--window-backdrop-filter);
+    border-radius: var(--window-border-radius);
+    padding: var(--window-padding-top) var(--window-padding-inline) var(--window-padding-bottom) var(--window-padding-inline);
+    display: block;
+    position: fixed;
+    -webkit-box-shadow: var(--window-shadow);
+    box-shadow: var(--window-shadow);
+    /* transition: all 0.1s ease-in-out; */
+    border-width: var(--window-border-width);
+    border-color: var(--window-border-color);
+    border-style: var(--window-border-style);
+    box-sizing: border-box;
+}
+
+app-window[data-minimised="true"] {
+    height: 20px !important;
+    top: 100% !important;
+    transition: height 0.05s ease-out, top 0.05s ease-out;
+}
+
+app-window[data-tile="full"] {
+    top:  var(--window-tiling-offset) !important;
+    left: var(--window-tiling-offset) !important;
+    width:  calc(100% - 2 * var(--window-tiling-offset)) !important;
+    height: calc(100% - 2 * var(--window-tiling-offset)) !important;
+    border-radius: var(--window-tiled-border-radius) !important;
+    padding-inline: var(--window-tiled-padding-inline);
+    padding-top: var(--window-tiled-padding-top);
+    padding-bottom: var(--window-tiled-padding-bottom);
+    transition: all 0.05s ease-in-out;
+}

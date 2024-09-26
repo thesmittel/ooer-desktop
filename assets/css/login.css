@@ -1,0 +1,328 @@
+/* reconsider, if this should be loaded on page start or sent on request later */
+
+login-main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* background-color: #0003;
+    backdrop-filter: blur(20px); */
+    background-image: url("/media/images?i=login wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+}
+
+login-main[data-hide="true"] {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: scale(1.25);
+}
+
+.login-main[data-visible="false"] {
+    visibility: hidden;
+}
+
+.login-big {
+    height: 360px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    grid-template-rows: 1fr;
+    width: 400px;
+    padding: 12px;
+    column-gap: 12px;
+    background: #fff4;
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    padding-inline: 24px;
+    box-shadow: 0px 0px 24px #0008;
+    overflow: hidden;
+}
+
+.login-big:not(:has([data-error="none"])) {
+    outline: solid 2px red;
+}
+
+.login-container {
+    grid-template-columns: 1fr;
+    height: 360px;
+    border-radius: 24px;
+    grid-template-rows: 240px 1fr 1fr;
+    position: relative;
+    display: grid;
+    box-sizing: border-box;
+    padding: 12px;
+    border: solid 2px transparent;
+}
+
+.signup-big {
+    height: 360px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    grid-template-rows: 1fr;
+    width: 400px;
+    padding: 12px;
+    column-gap: 12px;
+    align-items: center;
+}
+
+.signup-element-container {
+    height: fit-content;
+    width: 100%;
+    border: solid 2px transparent;
+    padding-right: 2px;
+    margin-top: 24px;
+}
+
+.signup-container {
+    height: fit-content;
+    padding: 12px;
+    border: solid 3px transparent;
+}
+
+/* No Error */
+.signup-container[data-errorusername="None"]>div#signup-username-div>input#signup-username,
+.signup-container[data-erroremail="None"]>div#signup-email-div>input#signup-email,
+.signup-container[data-errorpasswordmatch="None"]>div#signup-password-div>input#signup-password,
+.signup-container[data-errorpasswordmatch="None"]>div#signup-password-confirm-div>input#signup-password-confirm {
+    border: solid 2px transparent;
+}
+
+
+.signup-container[data-errorusername]:not([data-errorusername="None"])>div#signup-username-div>input#signup-username {
+    border: solid 2px red;
+}
+
+.signup-container[data-errorusername]:not([data-errorusername="None"])>div#signup-username-div::after {
+    content: attr(data-errorusername);
+    top: calc(50% - 108px);
+    padding-inline: 12px;
+    border-radius: 6px 6px 0 0;
+    border: solid 2px red;
+    background-color: #f007;
+    color: white;
+    position: absolute;
+    width: 282.4px;
+    white-space: nowrap;
+    height: fit-content;
+    font-size: 12px;
+    padding-block: 3px;
+    border-bottom: none;
+}
+
+.signup-container[data-erroremail]:not([data-erroremail="None"])>div#signup-email-div>input#signup-email {
+    border: solid 2px red;
+}
+
+.signup-container[data-erroremail]:not([data-erroremail="None"])>div#signup-email-div::after {
+    content: attr(data-erroremail);
+    top: calc(50% - 44px);
+    padding-inline: 12px;
+    border-radius: 6px 6px 0 0;
+    border: solid 2px red;
+    background-color: #f007;
+    color: white;
+    position: absolute;
+    width: 282.4px;
+    white-space: nowrap;
+    height: fit-content;
+    font-size: 12px;
+    padding-block: 3px;
+    border-bottom: none;
+}
+
+.signup-container>div#signup-password-div>input#signup-password {
+    border-radius: 2px 2px 0 0;
+    border: 2px solid #fff2;
+    border-bottom: 1px solid #fff2;
+}
+
+.signup-container>div#signup-password-div>input#signup-password-confirm {
+    border-radius: 0 0 2px 2px;
+    border: 2px solid #fff2;
+    border-top: 1px solid #fff2;
+}
+
+
+.signup-container[data-errorpassword]:not([data-errorpassword="None"])>div#signup-password-div>input#signup-password {
+    border: solid 2px red;
+    border-bottom: 1px solid red;
+}
+
+.signup-container[data-errorpassword]:not([data-errorpassword="None"])>div#signup-password-div>input#signup-password-confirm {
+    border: solid 2px red;
+    border-top: 1px solid red;
+}
+
+.signup-container[data-errorpassword]:not([data-errorpassword="None"])>div#signup-password-div::after {
+    content: attr(data-errorpassword);
+    top: calc(50% + 18px);
+    padding-inline: 12px;
+    border-radius: 6px 6px 0 0;
+    border: solid 2px red;
+    background-color: #f007;
+    color: white;
+    position: absolute;
+    width: 282.4px;
+    white-space: nowrap;
+    height: fit-content;
+    font-size: 12px;
+    padding-block: 3px;
+    border-bottom: none;
+}
+
+
+.login-container:not([data-error="none"])::after {
+    content: attr(data-error);
+  outline: solid 2px red;
+  background-color: #f007;
+  color: white;
+  position: absolute;
+  bottom: -15px;
+  left: 197px;
+  width: 447px;
+  white-space: nowrap;
+  height: fit-content;
+  transform: translateX(-50%);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-block: 4px;
+}
+
+
+
+.password-hint {
+    position: absolute;
+    height: fit-content;
+    width: 200px;
+    background-color: #fff5;
+    padding: 6px;
+    border-radius: 6px 0 6px 6px;
+    top: calc(50% + 40px);
+    left: calc(50% - 400px);
+    font-size: 12px;
+}
+
+.password-hint[data-visible="false"] {
+    visibility: hidden;
+}
+
+
+.pw-requirement {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: #d33;
+    width: 100%;
+    margin-block: 4px;
+}
+
+.pw-requirement[data-met="true"] {
+    background-color: #3d3;
+}
+
+input[type=password][data-form="login"],
+input[type=text][data-form="login"] {
+    outline: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    height: 36px;
+    line-height: 24px;
+    display: block;
+    border: none;
+    background-color: #0008;
+    padding-inline: 12px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input[type=text][data-form="login"]:focus,
+input[type=password][data-form="login"]:focus {
+    outline: solid 2px #77f8;
+}
+
+.login-container[data-error="Invalid username"]>[data-form="login"] {
+    border: solid 2px red;
+}
+
+.login-container[data-error="Invalid password"]>[data-form="login"] {
+    border: solid 2px red;
+}
+
+/* input[type=text]:focus {
+    border: 2px solid #fff5;
+} */
+
+/* input[type=password][data-form="login"] {
+    padding: 5px;
+    outline: none;
+    background-color: #000c;
+    border: 2px solid #fff2;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    display: block;
+    width: calc(100% - 12px);
+} */
+/*
+input[type=password]:focus {
+    border: 2px solid #fff5;
+} */
+
+.default-pfp {
+    display: block;
+    position: relative;
+    height: 75%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-image: url("../media/images/default.jpg");
+    background-size: contain;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+div.login-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 232px 50px;
+    padding-block: 12px;
+    height: 360px;
+    box-sizing: border-box;
+}
+
+div.signup-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 158px 50px;
+    padding-block: 12px;
+    height: 360px;
+    box-sizing: border-box;
+    top: 12px;
+    position: relative;
+}
+
+a.login-button {
+    display: block;
+    cursor: pointer;
+    background-color: #0007;
+    border: solid 1px #888;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
