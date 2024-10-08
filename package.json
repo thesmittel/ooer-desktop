@@ -9,14 +9,32 @@
   "author": "Smittel",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "socket.io": "^4.8.0"
+    "express": "^4.21.0",
+    "socket.io": "^4.8.0",
+    "socket.io-client": "^4.8.0"
   },
   "type": "module",
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "nwjs-types": "^1.0.0"
   },
   "window": {
     "toolbar": true
-  }
+  },
+  "node-remote": [
+    "http://localhost:48080",
+    "file:///.*"
+  ],
+  "webview": {
+    "partitions": [
+      {
+        "name": "trusted",
+        "accessible_resources": [
+          "<all_urls>"
+        ],
+        "chromium-args": "--allow-file-access"
+      }
+    ]
+  },
+  "chromium-args": "--allow-file-access"
 }

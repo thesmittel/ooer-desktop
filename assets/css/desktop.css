@@ -5,6 +5,9 @@
     font-family: "Roboto", sans-serif;
     color: white;
     user-select: none;
+    scroll-behavior: smooth;
+    scrollbar-color: #fff3 transparent;
+    scrollbar-width: thin;
 }
 
 b,
@@ -15,11 +18,12 @@ strong {
 }
 
 body {
-    /* background-image: url("/media/images?i=mountain.jpg"); */
-    background-image: url("/assets/media/images/iceland.jpg");
+    /* background-image: url("/media/images/mountain.jpg"); */
+    background-image: url("/media/images/iceland.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .desktop-symbols-container-outer {

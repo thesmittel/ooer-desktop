@@ -32,16 +32,16 @@
  * @todo Application caching
  */
 
-import * as fs from "fs"
-import * as url from 'url';
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = url.fileURLToPath(new URL('..', import.meta.url));
+const fs = require("fs")
+const url = require("url")
+// const __filename = url.fileURLToPath(import.meta.url);
+// const __dirname = url.fileURLToPath(new URL(document.location, import.meta.url));
 
 let appDB = JSON.parse(fs.readFileSync("./server/applications/custom/db.json"))
 
 /**
  * Takes the id of a system application, grabs the files and sends them
- * @param { Socket } socket 
+ * @param { Socket } socket
  * @param { {id: String} } data Object containing the application id
  * @emits Socket.emit:App
  * @method grabApplication
@@ -49,7 +49,7 @@ let appDB = JSON.parse(fs.readFileSync("./server/applications/custom/db.json"))
  */
 function grabApplication(socket, {id}) {
     // const id = data.id;
-    const appDir = __dirname + "applications/system/" + id + "/"
+    const appDir = "./applications/system/" + id + "/"
     console.log("app", appDir)
     fs.readFile(appDir + "config.json" , (err, res) => {
         let config = JSON.parse(res)
@@ -68,9 +68,9 @@ function grabApplication(socket, {id}) {
             }
 
 
-                // remove manually added registerListener and deleteListener import. This is done such that there is a layer of "control". Apps cannot register listeners for other apps because the ID is baked into the call by means of a small "detour". But since system apps are modules they could in theory import these functions manually and go ham. Not terribly relevant assuming sysapps are written by trusted sources, but it prevents issues. 
-                
-            
+                // remove manually added registerListener and deleteListener import. This is done such that there is a layer of "control". Apps cannot register listeners for other apps because the ID is baked into the call by means of a small "detour". But since system apps are modules they could in theory import these functions manually and go ham. Not terribly relevant assuming sysapps are written by trusted sources, but it prevents issues.
+
+
             const code = res.replaceAll(/"<import>"[\w\W]+?"<\/import>"/g, "")
             const ret = `${(imports || []).join(";\n")}
 "<application>"
@@ -89,16 +89,16 @@ ${code}`
             fs.readFile(appDir + config.windows[w].js, (err, res)=>{cbj(res, w, "js")})
             fs.readFile(appDir + config.windows[w].css, (err, res)=>{cb(res, w, "css")})
         }
-        
-        
+
+
         function send() {
             for (let w = 0; w < config.windows.length; w++) {
                 config.windows[w].html = config.windows[w].html.toString().replace(/<\s*?script[\w\W]*?>[\w\W]*?<\/script>/gi, "")
             }
             // config.windows[0].js = `function getScriptWorker(foo) {return window.URL.createObjectURL(new Blob([foo], {type: "text/javascript"}))};function protectCode(code) {let worker  = new Worker(getScriptWorker(code))};protectCode(${config.windows[0].js.replace(/\r/g, "")})`;
-            // 
+            //
             // config.windows[0].js = config.windows[0].js.replace(/([^;\n]*?((document)|(process)|(window))(\n*).*?(;|\n|$)|(eval\([^)(]*(?:\([^)(]*(?:\([^)(]*(?:\([^)(]*\)[^)(]*)*\)[^)(]*)*\)[^)(]*)*\))|[^\n].*?parentNode.*?(;|$|\n))/gi, "")
-            
+
             let appObj = {
                 config: {
                     windows: config.windows,
@@ -108,14 +108,14 @@ ${code}`
                     author: config.author,
                     resizable: config.resizable
                 },
-                icon: `/media/desktopicons?i=${id}`,
+                icon: `/media/desktopicons/${id}`,
                 id: id,
                 permissions: 2
             }
             socket.emit("App", {response: "start_app", data: appObj})
         }
-        
-        
+
+
     })
 }
 

@@ -35,10 +35,11 @@
  * @todo Replace user password storage with a database instead of a JSON
  */
 
-import * as Crypto from 'crypto'
-import * as fs from "fs"
-import { addUser } from '../../server.js';
-import { Socket } from 'socket.io';
+// import { addUser } from '../../server.mjs';
+// const {addUser} = import("../../server.js")
+const Crypto = require("crypto")
+const fs = require("fs")
+const { Socket } = require("socket.io")
 
 
 // this WILL be replaced
@@ -49,6 +50,7 @@ import { Socket } from 'socket.io';
  * @name Internal:password
  * @type {{String: {"password": String, "salt": String}}}
  */
+
 
 let passwords = JSON.parse(fs.readFileSync("./server/passworddb/passwords.json").toString()).passwords
 
@@ -151,7 +153,7 @@ function signup(socket, {username, email, password, passwordconfirm}) {
     }
     passwords[id] = {password: hashedPW, salt: salt}
     fs.writeFile("./passworddb/passwords.json", JSON.stringify({passwords: passwords}), ()=> {})
-    addUser(id, username, email)
+    // addUser(id, username, email)
     socket.emit("Auth", {response: "confirm-signup", data: {username: username, password: password}})
 }
 

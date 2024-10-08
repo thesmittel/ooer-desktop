@@ -1,16 +1,17 @@
 "<import>"
 import { create } from "/js/modules/Util.mjs";
-import { Wheel, TextboxSlider, SliderGroup, DropDownMenu, TextDropDown } from "/js/modules/ui.mjs"
+import { Wheel, TextboxSlider, SliderGroup, DropDownMenu, TextDropDown } from "/js/components/ui.mjs"
 import { App, System } from "/js/modules/Connect.mjs";
-import { addMessageListener } from "/js/modules/System.mjs"
-import * as Client from "/js/modules/Client.mjs"
+import { addMessageListener } from "/js/modules/connect/System.mjs"
+import * as Client from "/js/modules/connect/Client.mjs"
 "</import>"
 "<application>"
 
 function handleMessages(data) {
     console.log(data)
 }
-
+oman()
+console.log("test")
 addMessageListener(application.windowid, handleMessages)
 
 
@@ -190,7 +191,7 @@ function subheader(string) {
     })
 }
 /**
- * 
+ *
  * @param {String} label Label for settings window
  * @param {(Boolean|("true"|"false"))} value On or off
  * @returns {HTMLElement}
@@ -216,7 +217,7 @@ function makeToggle(label, value) {
     })
 }
 /**
- * 
+ *
  * @param {String} label Label for settings window
  * @param {Function=} func Click handler
  * @returns {HTMLElement}
@@ -242,15 +243,15 @@ function makeButton(label, func) {
     })
 }
 /**
- * 
- * @param {String} label 
+ *
+ * @param {String} label
  * @param {Object} color
  * @param {Number=} color.r Value of red color channel, defaults to 0
  * @param {Number=} color.g Value of green color channel, defaults to 0
  * @param {Number=} color.b Value of blue color channel, defaults to 0
  * @param {Number=} color.a Value of alpha channel, defaults to 0
  * @todo undefined color.a means no alpha channel at all
- * 
+ *
  * @returns {HTMLElement}
  */
 function makeColorPicker(label, {r, g, b, a}) {
@@ -282,7 +283,7 @@ function makeColorPicker(label, {r, g, b, a}) {
  * @typedef TextDropDown TextDropDown
  */
 /**
- * 
+ *
  * @param {String} label The label used in the settings window
  * @param {(Array|DropDownMenu)} menu The menu itself, either as an array of options or as a previously defined Object of class DropDownMenu
  * @param {Number=} defaultIndex The default index, optional, defaults to 0, only effective if menu is Array
@@ -312,9 +313,9 @@ function makeDropDownMenu(label, menu, defaultIndex) {
 }
 
 /**
- * 
+ *
  * @param {String} label The label for the settings window
- * @param {(String[]|TextDropDown)} options The options, either as array of strings or string convertibles or as instance of TextDropDown 
+ * @param {(String[]|TextDropDown)} options The options, either as array of strings or string convertibles or as instance of TextDropDown
  * @param {Number=} defaultIndex The default index, optional, defaults to 0, only effective if options is Array
  * @returns HTMLElement
  */
@@ -393,7 +394,7 @@ function makeTemporaryTextbox(label, value, opens, isPassword) {
 }
 
 const savedApps = [
-    
+
     {name: "Notepad", id: "notepad", dateInstalled: 0, lastUsed: Date.now(), author: "System", type: "App"},
     {name: "Terminal", id: "terminal", dateInstalled: 653425640, lastUsed: Date.now(), author: "System", type: "App"},
     {name: "Settings", id: "settings", dateInstalled: 0, lastUsed: Date.now(), author: "System", type: "App"},
@@ -549,7 +550,7 @@ function makeSortableList(label, options) {
                             })
                             target.parentNode.parentNode.dataset.allselected = target.dataset.selected;
                             let allSelected = checkAllSelected(target.parentNode.parentNode)
-                            
+
                         }}
                     },
                     {
@@ -759,7 +760,7 @@ function listener(data) {
             // update ui to select correct sub menu
     }
 
-    
+
 }
 
 application.addListener(listener)

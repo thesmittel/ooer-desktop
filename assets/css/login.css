@@ -6,7 +6,7 @@ login-main {
     width: 100%;
     /* background-color: #0003;
     backdrop-filter: blur(20px); */
-    background-image: url("/media/images?i=login wallpaper.jpg");
+    background-image: url("/media/images/login\ wallpaper.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -287,7 +287,7 @@ input[type=password]:focus {
     height: 75%;
     aspect-ratio: 1;
     border-radius: 100%;
-    background-image: url("../media/images/default.jpg");
+    background-image: url("/media/images/default.jpg");
     background-size: contain;
     left: 50%;
     top: 50%;

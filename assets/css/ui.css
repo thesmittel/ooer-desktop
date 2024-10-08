@@ -189,7 +189,7 @@ desktop-symbol::after {
 }
 
 desktop-symbol::before {
-    --text: "/media/desktopicons?i=" + attr(data-appid);
+    --text: "/media/desktopicons/" + attr(data-appid);
     background-image: var(--text);
     position: absolute;
     height: 100%;
@@ -302,7 +302,7 @@ taskbar-button:hover>.preview.active>* {
 }
 
 taskbar-button[data-action="home"] {
-    background-image: url("/media/icons?i=logo.png");
+    background-image: url("/assets/media/icons/logo.png");
     background-size: contain;
 }
 

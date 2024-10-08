@@ -55,8 +55,14 @@ desktop-layer>* {
 }
 
 edge-selector-container {
-    width: 100%;
-    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    translate: -50% -50%;
+    left: 50%;
+    transition: opacity 0.1s ease;
     display: grid;
     grid-template-columns: 64px 1fr 64px 1fr 64px;
     grid-template-rows: 64px 1fr 64px 1fr 64px;
@@ -64,7 +70,12 @@ edge-selector-container {
     grid-row-gap: 0px;
     z-index: 100000000;
     position: fixed;
-    visibility: hidden;
+}
+
+edge-selector-container[data-visible="true"] {
+    transition: opacity 0.1s ease;
+
+    opacity: 1;
 }
 
 edge-selector {
@@ -314,36 +325,38 @@ panel-settings {
     background-color: #fff4;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 12px #0008;
-    transition: translate 0.15s ease, visibility 0.1s ease 0.1s;
+    transition: translate 0.15s ease, visibility 0.1s ease 0.1s, inset 0.1s ease;
     visibility: visible;
 }
 
+
+
 panel-settings[edgeV="bottom"] {
-    bottom: calc(100% + 12px);
+    bottom: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     left: 50%;
     translate: -50%;
 }
 
 panel-settings[edgeV="top"] {
-    top: calc(100% + 12px);
+    top: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     left: 50%;
     translate: -50%;
 }
 
 panel-settings[edgeH="left"] {
-    left: calc(100% + 12px);
+    left: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     top: 50%;
     translate: 0 -50%;
 }
 
 panel-settings[edgeH="right"] {
-    right: calc(100% + 12px);
+    right: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     top: 50%;
     translate: 0 -50%;
 }
 
 panel-settings[edgeH="right"][edgeV="top"] {
-    top: calc(100% + 12px);
+    top: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     right: 12px;
     translate: 0 0;
     left: unset;
@@ -351,7 +364,7 @@ panel-settings[edgeH="right"][edgeV="top"] {
 }
 
 panel-settings[edgeH="left"][edgeV="top"] {
-    top: calc(100% + 12px);
+    top: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     left: 12px;
     translate: 0 0;
     right: unset;
@@ -359,7 +372,7 @@ panel-settings[edgeH="left"][edgeV="top"] {
 }
 
 panel-settings[edgeH="right"][edgeV="bottom"] {
-    bottom: calc(100% + 12px);
+    bottom: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     right: 12px;
     translate: 0 0;
     left: unset;
@@ -367,7 +380,7 @@ panel-settings[edgeH="right"][edgeV="bottom"] {
 }
 
 panel-settings[edgeH="left"][edgeV="bottom"] {
-    bottom: calc(100% + 12px);
+    bottom: calc(5% + var(--panel-height) + var(--margin-block) * var(--floating));
     left: 12px;
     translate: 0 0;
     right: unset;
@@ -382,42 +395,35 @@ panel-settings[data-hidden="true"] {
 }
 
 panel-settings[edgeH="left"][edgeV="top"][data-hidden="true"] {
-    translate: 0% calc(-100% - var(--panel-height) - var(--margin-block) - 36px);
-    visibility: hidden;
+    translate: 0% calc(-100% - var(--panel-height) - var(--margin-block) * var(--floating) - 36px);
 }
 
 panel-settings[edgeH="center"][edgeV="top"][data-hidden="true"] {
-    translate: -50% calc(-100% - var(--panel-height) - var(--margin-block) - 36px);
-    visibility: hidden;
+    translate: -50% calc(-100% - var(--panel-height) - var(--margin-block) * var(--floating) - 36px);
 }
 
 panel-settings[edgeH="right"][edgeV="top"][data-hidden="true"] {
-    translate: 0% calc(-100% - var(--panel-height) - var(--margin-block) - 36px);
-    visibility: hidden;
+    translate: 0% calc(-100% - var(--panel-height) - var(--margin-block) * var(--floating) - 36px);
 }
 
 panel-settings[edgeH="left"][edgeV="center"][data-hidden="true"] {
-    translate: calc(-100% - var(--panel-width) - var(--margin-inline) - 36px) -50%;
-    visibility: hidden;
+    translate: calc(-100% - var(--panel-width) - var(--margin-inline) * var(--floating) - 36px) -50%;
 }
 
 panel-settings[edgeH="right"][edgeV="center"][data-hidden="true"] {
-    translate: calc(100% + var(--panel-width) + var(--margin-inline) + 36px) -50%;
-    visibility: hidden;
+    translate: calc(100% + var(--panel-width) + var(--margin-inline) * var(--floating) + 36px) -50%;
 }
 
 panel-settings[edgeH="left"][edgeV="bottom"][data-hidden="true"] {
-    translate: 0% calc(100% + var(--panel-height) + var(--margin-block) + 36px);
-    visibility: hidden;
+    translate: 0% calc(100% + var(--panel-height) + var(--margin-block) * var(--floating) + 36px);
 }
 
 panel-settings[edgeH="center"][edgeV="bottom"][data-hidden="true"] {
-    translate: -50% calc(100% + var(--panel-height) + var(--margin-block) + 36px);
-    visibility: hidden;
+    translate: -50% calc(100% + var(--panel-height) + var(--margin-block) * var(--floating) + 36px);
 }
 
 panel-settings[edgeH="right"][edgeV="bottom"][data-hidden="true"] {
-    translate: 0% calc(100% + var(--panel-height) + var(--margin-block) + 36px);
+    translate: 0% calc(100% + var(--panel-height) + var(--margin-block) * var(--floating) + 36px);
 }
 
 panel-settings:hover {

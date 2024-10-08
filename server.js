@@ -44,25 +44,28 @@
  * @requires Server:Client (Not yet implemented)
  */
 
-import * as express from "express"
-import * as http from "http"
-import * as fs from "fs"
-import {Server, Socket} from "socket.io"
-import * as url from 'url';
+const express = require("express")
+const http = require("http")
+const fs = require("fs")
+// import {Server, Socket} from "socket.io"
+const { Server, Socket } = require("socket.io")
+const url = require("url");
 import * as Auth from "./server/modules/Auth.js"
 import * as System from "./server/modules/System.js"
 import * as App from "./server/modules/App.js"
+import * as ENV from "./js/modules/system/Environment.mjs"
 
 
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+const __dirname = ENV.installPath//url.fileURLToPath(new URL('.', import.meta.url));
 
 console.log(__dirname)
 
-const app = express.default();
+const app = express();
+// app.use("./server/public")
 const server = http.createServer(app);
 const io = new Server(server);
-app.use(express.static(__dirname + '/client/public'));
+// app.use(express.static(__dirname + '/client/public'));
 
 let users = JSON.parse(fs.readFileSync("./server/users/userdata.json").toString()).users
 
@@ -86,6 +89,7 @@ app.get('/media/desktopicons', (req, res) => {
     }
     res.sendFile(__dirname + "/server/applications/system/" + req.query.i + "/icon.png")
 })
+
 
 /**
  * Handles authentication requests and calls the relevant methods in the Auth module

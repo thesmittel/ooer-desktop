@@ -97,7 +97,7 @@
 	border-radius: 100%;
 	overflow: hidden;
 	background-size: cover;
-	background-image: url("/content/images?i=default.jpg");
+	background-image: url("/content/images/default.jpg");
 }
 
 .settings-username-field {
@@ -110,7 +110,7 @@
 
 .settings-nick {
 	background-color: rgba(0,0,0,0);
-	position: absolute; 
+	position: absolute;
 	top: 6px;
 	left: -6px;
 	width: 96%;
